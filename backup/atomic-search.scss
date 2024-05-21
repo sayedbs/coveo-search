@@ -1,11 +1,11 @@
-// atomic Coveo search UI customization help link: https://docs.coveo.com/en/atomic/latest/usage/themes-and-visual-customization/
+/* // atomic Coveo search UI customization help link: https://docs.coveo.com/en/atomic/latest/usage/themes-and-visual-customization/
 
 // previousButtonIcon:: <svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12" fill="none"><path d="M0.840027 1.41L5.42003 6L0.840027 10.59L2.25003 12L8.25003 6L2.25003 0L0.840027 1.41Z" fill="currentcolor"/></svg>
 // previousButtonIcon:: <svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12" fill="none"> <path d="M8.15997 1.41L3.57997 6L8.15997 10.59L6.74997 12L0.749973 6L6.74997 0L8.15997 1.41Z" fill="currentcolor"/>  </svg>
-// learn about Storybook:: https://static.cloud.coveo.com/atomic/v2.25/storybook/index.html?path=/story/atomic-pager--default-pager
+// learn about Storybook:: https://static.cloud.coveo.com/atomic/v2.25/storybook/index.html?path=/story/atomic-pager--default-pager */
 
 atomic-search-layout {
-  margin-bottom: rem(50px);
+  margin-bottom: 50px;
   --atomic-primary: #061D49;
   --atomic-border-radius: 4px;
   --atomic-neutral: #DFE3E8;
@@ -37,7 +37,7 @@ atomic-pager {
     height: 32px;
     min-height: auto;
     min-width: auto;
-    font-size: rem(14px);
+    font-size: 14px;
     border-width: 1px;
     border-style: solid;
   }
@@ -72,7 +72,7 @@ atomic-facet {
     padding: 5.5px 15px;
     font-size: 14px;
     font-weight: 400;
-    color: rgba($primary, 0.45);
+    color: rgba(#061D49, 0.45);
     border: 1px solid var(--atomic-primary);
     border-radius: 20px;
   }
@@ -89,7 +89,7 @@ atomic-facet {
       font-family: "icomoon";
       background: none;
       font-size: 20px;
-      color: $primary;
+      color: #061D49;
       width: auto;
       height: auto;
       margin: 0;
@@ -109,20 +109,20 @@ atomic-facet {
   &::part(value-checkbox) {
     width: 10px;
     height: 10px;
-    left: rem(15px);
+    left: 15px;
     border-radius: 2px;
     border: 1px solid var(--atomic-primary);
 
     &:hover {
-      border-color: $white;
+      border-color: #fff;
       background: var(--atomic-primary);
     }
   }
 
   &::part(value-checkbox-checked) {
     background: var(--atomic-primary);
-    border-color: $white;
-    color: $white;
+    border-color: #fff;
+    color: #fff;
   }
 
   &::part(value-checkbox-label) {
@@ -133,7 +133,7 @@ atomic-facet {
 
     &:hover {
       background: var(--atomic-primary);
-      color: $white;
+      color: #fff;
     }
   }
 
@@ -144,16 +144,16 @@ atomic-facet {
     color: var(--atomic-primary);
 
     &:hover {
-      color: $white;
-      border-color: $white;
+      color: #fff;
+      border-color: #fff;
       background: var(--atomic-primary);
     }
   }
 
   // it is possible (on active bg & color highlight ) but, commented only for the design consistencies.
   //&::part(value-link-selected) {
-  //  color: $white;
-  //  border-color: $white;
+  //  color: #fff;
+  //  border-color: #fff;
   //  background: var(--atomic-primary);
   //}
 
@@ -220,13 +220,14 @@ atomic-no-results {
   }
 
   .no-result {
-    font-size: rem(18px);
+    font-size: 18px;
     text-align: center;
     padding-top: 15px;
 
-    @include media-breakpoint-down(lg) {
+    @media screen and (max-width: 1100px) {
       margin-bottom: 12px;
     }
+
 
     @media screen and (min-width: 992px) {
       padding-top: 30px;
@@ -250,10 +251,10 @@ atomic-no-results {
         display: block;
         height: auto;
         margin: 0 auto;
-        @include media-breakpoint-up(lg) {
+        @media screen and (min-width: 1200px) {
           max-width: 292px;
         }
-        @include media-breakpoint-down(lg) {
+        @media screen and (max-width: 1200px) {
           max-width: 205px;
         }
       }
@@ -278,25 +279,17 @@ atomic-no-results {
 .highlighted-section {
   background: var(--atomic-primary);
 
-  @include media-breakpoint-up(md) {
-    padding: 30px;
-  }
+  padding: 30px;
+  
 
-  @include media-breakpoint-down(md) {
-    padding: 30px 20px;
-  }
-
-  color: $white;
+  color: #fff;
   margin-top: 30px;
-  font-size: rem(14px);
-  line-height: rem(20px);
+  font-size: 14px;
+  line-height: 20px;
 
   h3 {
-    font-size: rem(24px);
+    font-size: 24px;
     margin-bottom: 10px;
-    @include media-breakpoint-down(md) {
-      font-size: rem(16px);
-    }
   }
 
   &_footer {
@@ -305,22 +298,15 @@ atomic-no-results {
     gap: 33px;
     margin: 30px 0 3px 0;
 
-    @include media-breakpoint-down(md) {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-
     .button-link .dmpro-v2 {
       &,&:not([disabled]):hover {
-        background: $white;
+        background: #fff;
         color: var(--atomic-primary) !important;
-        border-color: $white;
+        border-color: #fff;
         font-weight: normal !important;
       }
 
-      @include media-breakpoint-up(md) {
-        margin-bottom: 0;
-      }
+      margin-bottom: 0;
     }
   }
 
@@ -354,7 +340,7 @@ atomic-no-results {
     padding-left: 30px;
   }
   atomic-query-summary::part(container) {
-    font-size: rem(16px);
+    font-size: 16px;
     line-height: 1.5;
     padding: 0 0 15px 0;
   }
@@ -386,7 +372,7 @@ atomic-no-results {
   }
 
   atomic-query-summary::part(container) {
-    font-size: rem(16px);
+    font-size: 16px;
     line-height: 1.5;
   }
 

@@ -1,0 +1,327 @@
+/* // atomic Coveo search UI customization help link: https://docs.coveo.com/en/atomic/latest/usage/themes-and-visual-customization/
+
+// previousButtonIcon:: <svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12" fill="none"><path d="M0.840027 1.41L5.42003 6L0.840027 10.59L2.25003 12L8.25003 6L2.25003 0L0.840027 1.41Z" fill="currentcolor"/></svg>
+// previousButtonIcon:: <svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12" fill="none"> <path d="M8.15997 1.41L3.57997 6L8.15997 10.59L6.74997 12L0.749973 6L6.74997 0L8.15997 1.41Z" fill="currentcolor"/>  </svg>
+// learn about Storybook:: https://static.cloud.coveo.com/atomic/v2.25/storybook/index.html?path=/story/atomic-pager--default-pager */
+
+
+/* visit: 
+        https://docs.coveo.com/en/atomic/latest/
+        https://stackblitz.com/edit/atomicv2?file=index.html */
+
+atomic-search-layout {
+  margin-bottom: 50px;
+  --atomic-primary: #061D49;
+  --atomic-border-radius: 4px;
+  --atomic-neutral: #DFE3E8;
+  --atomic-neutral-light: #9F9F9F;
+  --atomic-neutral-dark: #1D1D1D;
+  --atomic-text-xl: 14px;
+  --atomic-text-base: 12px;
+}
+
+@media only screen and (min-width: 1024px) {
+  atomic-layout-section[section=pagination] {
+    padding-top: 40px;
+  }
+}
+@media only screen and (max-width: 1023.99px) {
+  atomic-layout-section[section=pagination] {
+    padding: 20px 0;
+  }
+}
+
+atomic-pager::part(buttons) {
+  gap: 8px;
+}
+atomic-pager::part(page-button), atomic-pager::part(next-button), atomic-pager::part(previous-button) {
+  width: 32px;
+  height: 32px;
+  min-height: auto;
+  min-width: auto;
+  font-size: 14px;
+  border-width: 1px;
+  border-style: solid;
+}
+atomic-pager::part(next-button), atomic-pager::part(previous-button) {
+  padding-top: 0;
+}
+atomic-pager::part(page-button) {
+  padding-top: 1px;
+}
+atomic-pager::part(active-page-button) {
+  border: 1px solid var(--atomic-primary);
+  color: var(--atomic-primary);
+}
+
+atomic-facet::part(facet) {
+  padding: 0;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border: 0;
+}
+atomic-facet::part(label-button) {
+  padding: 5.5px 15px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(6, 29, 73, 0.45);
+  border: 1px solid var(--atomic-primary);
+  border-radius: 20px;
+}
+atomic-facet::part(label-button-icon) {
+  fill: none;
+  position: relative;
+}
+atomic-facet::part(label-button-icon):after {
+  position: absolute;
+  right: -3px;
+  top: -7px;
+  content: "\e900";
+  font-family: "icomoon";
+  background: none;
+  font-size: 20px;
+  color: #061D49;
+  width: auto;
+  height: auto;
+  margin: 0;
+  transition: 0.2s ease-in;
+  border: none;
+  fill: none;
+}
+atomic-facet::part(values) {
+  margin: 0;
+  border: 1px solid var(--atomic-primary);
+  border-radius: 20px;
+  overflow: hidden;
+}
+atomic-facet::part(value-checkbox) {
+  width: 10px;
+  height: 10px;
+  left: 15px;
+  border-radius: 2px;
+  border: 1px solid var(--atomic-primary);
+}
+atomic-facet::part(value-checkbox):hover {
+  border-color: #fff;
+  background: var(--atomic-primary);
+}
+atomic-facet::part(value-checkbox-checked) {
+  background: var(--atomic-primary);
+  border-color: #fff;
+  color: #fff;
+}
+atomic-facet::part(value-checkbox-label) {
+  padding: 12.5px 5px 12.5px 37px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--atomic-primary);
+}
+atomic-facet::part(value-checkbox-label):hover {
+  background: var(--atomic-primary);
+  color: #fff;
+}
+atomic-facet::part(value-link) {
+  padding: 6.5px 5px 6.5px 15px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--atomic-primary);
+}
+atomic-facet::part(value-link):hover {
+  color: #fff;
+  border-color: #fff;
+  background: var(--atomic-primary);
+}
+atomic-facet::part(value-count), atomic-facet::part(value-label) {
+  color: inherit;
+}
+atomic-facet::part(value-count) {
+  margin-left: 3px;
+}
+atomic-facet::part(clear-button) {
+  display: none;
+}
+
+@media only screen and (max-width: 1023.99px) {
+  atomic-facet-manager:has(atomic-facet:not(.atomic-hidden):not(.d-none)) {
+    display: block;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--atomic-neutral);
+    margin-bottom: 0;
+  }
+}
+
+atomic-query-summary::part(container) {
+  --atomic-on-background: #1D1D1D;
+}
+
+@media only screen and (max-width: 1023.99px) {
+  atomic-search-layout atomic-layout-section[section=main] {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+atomic-result-list::part(outline) {
+  --atomic-on-background: var(--atomic-primary);
+  line-height: 20px;
+}
+atomic-result-list::part(outline)::before {
+  margin: 18px 0 13px 0 !important;
+}
+@media only screen and (max-width: 1023.99px) {
+  atomic-result-list::part(outline)::before {
+    margin: 11px 0 !important;
+  }
+}
+
+atomic-no-results::part(icon) {
+  max-width: 200px;
+}
+atomic-no-results::part(icon), atomic-no-results::part(search-tips), atomic-no-results::part(no-results) {
+  display: none;
+}
+atomic-no-results .no-result {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 15px;
+}
+@media screen and (max-width: 1100px) {
+  atomic-no-results .no-result {
+    margin-bottom: 12px;
+  }
+}
+@media screen and (min-width: 992px) {
+  atomic-no-results .no-result {
+    padding-top: 30px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  atomic-no-results .no-result {
+    padding-top: 50px;
+  }
+}
+atomic-no-results .no-result .no-result-title {
+  margin: 0;
+}
+atomic-no-results .no-result-image {
+  text-align: center;
+  color: var(--atomic-primary);
+  margin-bottom: 60px;
+}
+atomic-no-results .no-result-image svg,
+atomic-no-results .no-result-image img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1200px) {
+  atomic-no-results .no-result-image svg,
+  atomic-no-results .no-result-image img {
+    max-width: 292px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  atomic-no-results .no-result-image svg,
+  atomic-no-results .no-result-image img {
+    max-width: 205px;
+  }
+}
+atomic-no-results .no-result-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+atomic-no-results .no-result-content ul,
+atomic-no-results .no-result-content ol {
+  text-align: left;
+}
+
+.atomic-search-interface-no-results atomic-layout-section[section=main] {
+  padding-left: 0;
+}
+
+.highlighted-section {
+  background: var(--atomic-primary);
+  padding: 30px;
+  color: #fff;
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.highlighted-section h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.highlighted-section_footer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 33px;
+  margin: 30px 0 3px 0;
+}
+.highlighted-section_footer .button-link .dmpro-v2 {
+  margin-bottom: 0;
+}
+.highlighted-section_footer .button-link .dmpro-v2, .highlighted-section_footer .button-link .dmpro-v2:not([disabled]):hover {
+  background: #fff;
+  color: var(--atomic-primary) !important;
+  border-color: #fff;
+  font-weight: normal !important;
+}
+.highlighted-section_login-label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.highlighted-section_login-label a {
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 1024.1px) {
+  atomic-search-layout {
+    grid-template-columns: 1fr minmax(16rem, 323px) minmax(50%, 70rem) 1fr !important;
+    -moz-column-gap: 0 !important;
+         column-gap: 0 !important;
+  }
+  atomic-layout-section[section=facets] {
+    border-right: 1px solid rgb(221, 221, 221);
+    padding-right: 22px;
+  }
+  atomic-layout-section[section=main] {
+    padding-left: 30px;
+  }
+  atomic-query-summary::part(container) {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 0 15px 0;
+  }
+}
+@media only screen and (max-width: 1023.99px) {
+  atomic-search-layout atomic-layout-section[section=status] atomic-query-summary {
+    --atomic-layout-spacing-y: 11px;
+  }
+  atomic-search-layout {
+    display: block !important;
+  }
+  atomic-layout-section[section=main] {
+    padding-left: 0;
+  }
+  atomic-layout-section[section=facets] {
+    display: block;
+    margin-top: 20px;
+  }
+  atomic-search-layout atomic-layout-section[section=status] atomic-refine-toggle {
+    display: none;
+  }
+  atomic-result-list::part(result-list) {
+    grid-template-columns: none;
+  }
+  atomic-query-summary::part(container) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .atomic-search-interface-no-results atomic-layout-section[section=facets] {
+    display: none;
+  }
+}/*# sourceMappingURL=atomic-search.css.map */
