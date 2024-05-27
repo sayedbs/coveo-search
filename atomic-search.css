@@ -341,3 +341,27 @@ atomic-pager::part(active-page-button) {
   background: #071D49;
   border-color: transparent;
 }
+
+
+/* filter design */
+atomic-search-layout atomic-layout-section[section='status'] atomic-breadbox {
+  margin-bottom: 50px;
+}
+atomic-breadbox::part(breadcrumb-button) {	color: #071D49;border: 1px solid #071D49;  }
+
+atomic-breadbox::part(breadcrumb-label) {	color: currentColor; }
+
+atomic-breadbox::part(label) {	opacity: 0; width: 0; min-width: 0; visibility: hidden; padding: 0; }
+
+atomic-breadbox::part(clear) {	color: #071D49;text-decoration: underline; }
+
+/* hover  */
+
+atomic-breadbox::part(breadcrumb-button):hover {
+  background: #071D49;
+  color: white;
+}
+
+atomic-breadbox::part(breadcrumb-button):hover  * {
+  color: white;
+}
