@@ -365,3 +365,18 @@ atomic-breadbox::part(breadcrumb-button):hover {
 atomic-breadbox::part(breadcrumb-button):hover  * {
   color: white;
 }
+
+
+/* search filter toggle hide show */
+
+@media only screen and (min-width: 1024px) {
+  atomic-search-layout#search-atomic atomic-layout-section[section="status"] atomic-refine-toggle {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1023.98px) {
+  atomic-search-layout#search-atomic atomic-layout-section[section="status"] atomic-refine-toggle {
+    display: block;
+  }
+}
+
